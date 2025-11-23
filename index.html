@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5D • Отцовское сердце</title>
+  <style>
+    body { background: #f8fdf8; font-family: Arial, sans-serif; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .card { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 520px; width: 100%; text-align: center; }
+    h2 { color: #2e7d32; }
+    p { color: #424242; line-height: 1.6; }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; text-align: left; }
+    input[type="range"] { width: 100%; height: 8px; border-radius: 5px; background: #ddd; outline: none; -webkit-appearance: none; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #2e7d32; cursor: pointer; }
+    button { background: #2e7d32; color: #fff; padding: 14px; border: none; border-radius: 12px; font-size: 17px; width: 100%; cursor: pointer; margin-top: 10px; }
+    #result { margin-top: 25px; text-align: left; line-height: 1.7; font-size: 15.5px; }
+    .box { padding: 15px; border-radius: 12px; margin: 15px 0; border-left: 5px solid; }
+    .comfort { background: #fff3e0; border-color: #ff9800; }
+    .truth { background: #e3f2fd; border-color: #2196f3; }
+    .heavy { background: #e8f5e9; border-color: #4caf50; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>5D • Отцовское сердце</h2>
+    <p>Это не тест и не диагноз.<br>Это просто возможность услышать, как Отец видит тебя прямо сейчас — даже если всё внутри болит.</p>
+
+    <label>1. Принадлежность — Кому я нужен?</label><input type="range" min="0" max="10" value="5" id="d1">
+    <label>2. Управление — Кто здесь хозяин?</label><input type="range" min="0" max="10" value="5" id="d2">
+    <label>3. Доверие — В чем моя опора?</label><input type="range" min="0" max="10" value="5" id="d3">
+    <label>4. Компетентность — Как у меня получается?</label><input type="range" min="0" max="10" value="5" id="d4">
+    <label>5. Значимость — Зачем я живу?</label><input type="range" min="0" max="10" value="5" id="d5">
+
+    <button onclick="show()">Услышать голос Отца</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const comfort = [
+      "Отец сейчас обнимает тебя и говорит: «Я здесь. Ты не один. Я никогда не оставлю тебя».",
+      "Он берёт всё бремя с твоих плеч и говорит: «Доверь Мне руль. Я — добрый Хозяин».",
+      "Он закрывает тебя Своими крыльями и шепчет: «Ты в полной безопасности у Меня».",
+      "Он смотрит на тебя с нежностью и говорит: «Ты Мой шедевр. Я горжусь тобой».",
+      "Он кладёт руку тебе на сердце и говорит: «Ты нужен Мне. Твоя жизнь бесценна»."
+    ];
+    const truth = [
+      "Ты — любимое дитя, в котором Моё благоволение (Лк 3:22). Я уже всё решил на кресте.",
+      "Я дал тебе Свою власть и силу — ты Мой соработник и наследник (Рим 8:17).",
+      "Я — твоя Скала и Прибежище. Под Моими крыльями ты в безопасности (Пс 90:4).",
+      "Ты — новое творение, праведность Божья во Христе (2 Кор 5:17, 21).",
+      "Ты — наследник Царя, и Я уже приготовил для тебя всё (Еф 1:11; Рим 8:32)."
+    ];
+
+    function show() {
+      const d = [0, +document.getElementById('d1').value, +document.getElementById('d2').value, +document.getElementById('d3').value, +document.getElementById('d4').value, +document.getElementById('d5').value];
+      const low = d.indexOf(Math.min(...d.slice(1)));
+      const score = d[low];
+      const spheres = ["", "Принадлежность", "Управление", "Доверие", "Компетентность", "Значимость"];
+
+      document.getElementById('result').innerHTML = `
+        <div class="box heavy">
+          <b>Сейчас эта сфера ощущается особенно тяжело:</b><br>
+          <b>${low}. ${spheres[low]}</b> (${score}/10)
+        </div>
+        
+        <p style="margin:20px 0"><b>Отец подходит ближе и говорит тебе прямо сейчас:</b></p>
+        <div class="box comfort">«${comfort[low-1]}»</div>
+        
+        <p style="margin:20px 0 10px 0"><b>И это вечная Истина обо мне, независимо от чувств:</b></p>
+        <div class="box truth">«${truth[low-1]}»</div>
+        
+        <p style="font-size:14px;color:#555;margin-top:25px">
+          Просто посиди с этим минутку. Скажи вслух вторую фразу три раза — медленно и нежно.<br>
+          Отец уже всё решил. Ты дома.
+        </p>
+      `;
+    }
+  </script>
+</body>
+</html>
