@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>5D • Father’s Heart – Lyle Thomas</title>
-  <meta name="description" content="A 60-second tool to hear Father’s voice in your pain – Lyle Thomas">
   <style>
     body{background:#f8fdf8;font-family:Arial,sans-serif;margin:0;padding:20px;display:flex;justify-content:center;align-items:center;min-height:100vh}
     .card{background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);max-width:520px;width:100%;text-align:center}
@@ -13,7 +12,7 @@
     label{display:block;margin:15px 0 5px;font-weight:bold;text-align:left}
     small{font-size:13px;color:#666;display:block;margin-top:4px}
     input[type=range]{width:100%;height:8px;border-radius:5px;background:#ddd;outline:none;-webkit-appearance:none}
-    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#2e7d32;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#2e7d32;cursor:pointer}
     button{background:#2e7d32;color:#fff;padding:14px;border:none;border-radius:12px;font-size:17px;width:100%;cursor:pointer;margin-top:10px}
     #result{margin-top:25px;text-align:left;line-height:1.7;font-size:15.5px}
     .box{padding:15px;border-radius:12px;margin:15px 0;border-left:5px solid}
@@ -51,16 +50,64 @@
   </div>
 
   <script>
-    const comfort=["Father is hugging you right now and saying: 'I am here. You are not alone. I will never leave you.'","He takes every burden off your shoulders and says: 'Trust Me with the wheel. I am the good Master.'","He covers you with His wings and whispers: 'You are completely safe with Me.'","He looks at you with tenderness and says: 'You are My masterpiece. I am proud of you.'","He places His hand on your heart and says: 'You are needed by Me. Your life is priceless.'"];
-    const truth=["You are My beloved child, in whom I am well pleased (Lk 3:22). I settled it all on the cross.","I gave you My authority and power — you are My co-worker and heir (Rom 8:17).","You will keep in perfect peace those whose minds are stayed on You (Isa 26:3).","You are a new creation, the righteousness of God in Christ (2 Cor 5:17, 21).","I have called you into My eternal purpose (Eph 1:11)."];
-    function show(){const d=[0,+d1.value,+d2.value,+d3.value,+d4.value,+d5.value];const low=d.indexOf(Math.min(...d.slice(1)));const score=d[low];const spheres=["","Belonging","Authority","Trust","Competence","Significance"];document.getElementById('result').innerHTML=`
-      <div class="box heavy"><b>This sphere feels especially heavy right now:</b><br><b>${low}. ${spheres[low]}</b> (${score}/10)</div>
-      <p style="margin:20px 0"><b>Here’s what Father wants you to know right now:</b></p>
-      <div class="box comfort">"${comfort[low-1]}"</div>
-      <p style="margin:20px 0 10px 0"><b>And this is the eternal Truth about me, regardless of feelings:</b></p>
-      <div class="box truth">"${truth[low-1]}"</div>
-      <p style="font-size:14px;color:#555;margin-top:25px">Just sit with this for a minute. If you want, say the second line out loud three times — slowly and gently.<br>Father has already settled it all. You are home.</p>
-    `;}
+    const comfort = [
+      ["Father is hugging you right now and saying: 'I am here. You are not alone. I will never leave you.'",
+       "He takes you by the hand and whispers: 'You are Mine forever.'",
+       "He places His hand on your heart and says: 'You are accepted and loved without condition.'",
+       "He looks into your eyes and says: 'I have engraved you on the palms of My hands.'",
+       "He pulls you close and says: 'You are home.'"],
+
+      ["He lifts every burden and says: 'Trust Me with the wheel — I am the good Master.'",
+       "He places a crown on you and says: 'You are My co-heir.'",
+       "He hands you the keys and says: 'All I have is yours.'",
+       "He raises you up and says: 'You are no longer a slave but a son.'",
+       "He clothes you with power and says: 'My strength is made perfect in your weakness.'"],
+
+      ["He covers you with His wings and whispers: 'You are completely safe with Me.'",
+       "He holds your right hand and says: 'You will not fall.'",
+       "He sets you on the Rock and says: 'I am your refuge.'",
+       "He carries you on eagles’ wings and says: 'I am with you in every storm.'",
+       "He gives you His peace and says: 'Do not be afraid — I am here.'"],
+
+      ["He looks at you with tenderness and says: 'You are My masterpiece. I am proud of you.'",
+       "He smiles and says: 'You are fearfully and wonderfully made.'",
+       "He lifts your chin and says: 'You are already righteous in Christ.'",
+       "He rejoices over you with singing and says: 'I delight in you.'",
+       "He places His hand on your shoulder and says: 'You are Mine — and that is enough.'"],
+
+      ["He places His hand on your heart and says: 'You are needed by Me. Your life is priceless.'",
+       "He opens the Book of Life and says: 'Your name is written here forever.'",
+       "He takes your hand and says: 'I chose you before the foundation of the world.'",
+       "He shows you His plan and says: 'You are part of My eternal purpose.'",
+       "He embraces you and says: 'I am preparing a place for you — you are coming home.'"]
+    ];
+
+    const truth = [
+      ["You are My beloved child, in whom I am well pleased (Lk 3:22).","I have engraved you on the palms of My hands (Isa 49:16).","You are accepted in the Beloved (Eph 1:6).","I have called you by name — you are Mine (Isa 43:1).","I will never leave you or forsake you (Heb 13:5)."],
+      ["I gave you My authority and power (Rom 8:17).","All I have is yours (Lk 15:31).","You are no longer a slave but a son and heir (Gal 4:7).","I made you a king and priest (Rev 1:6).","My power is made perfect in weakness (2 Cor 12:9)."],
+      ["You will keep in perfect peace those whose minds are stayed on Me (Isa 26:3).","I am your refuge and strength, an ever-present help in trouble (Ps 46:1).","When you pass through the waters, I will be with you (Isa 43:2).","I hold you by your right hand (Isa 41:10).","I carry you on eagles’ wings (Ex 19:4)."],
+      ["You are a new creation, the righteousness of God in Christ (2 Cor 5:17,21).","You are fearfully and wonderfully made (Ps 139:14).","I rejoice over you with singing (Zeph 3:17).","You are My workmanship, created for good works (Eph 2:10).","You are already pleasing to Me (Eph 1:6)."],
+      ["I have called you into My eternal purpose (Eph 1:11).","Your name is written in the Book of Life (Rev 21:27).","I chose you before the foundation of the world (Eph 1:4).","You will bear fruit in season (Ps 1:3).","I go to prepare a place for you (John 14:2-3)."]
+    ];
+
+    const spheres = ["","Belonging","Authority","Trust","Competence","Significance"];
+
+    function show(){
+      const d=[0,+d1.value,+d2.value,+d3.value,+d4.value,+d5.value];
+      const low=d.indexOf(Math.min(...d.slice(1)));
+      const score=d[low];
+      const c = comfort[low-1][Math.floor(Math.random()*5)];
+      const t = truth[low-1][Math.floor(Math.random()*5)];
+
+      document.getElementById('result').innerHTML=`
+        <div class="box heavy"><b>This sphere feels especially heavy right now:</b><br><b>${low}. ${spheres[low]}</b> (${score}/10)</div>
+        <p style="margin:20px 0"><b>Here’s what Father wants you to know right now:</b></p>
+        <div class="box comfort">"${c}"</div>
+        <p style="margin:20px 0 10px 0"><b>And this is the eternal Truth about me, regardless of feelings:</b></p>
+        <div class="box truth">"${t}"</div>
+        <p style="font-size:14px;color:#555;margin-top:25px">Just sit with this for a minute. If you want, say the second line out loud three times — slowly and gently.<br>Father has already settled it all. You are home.</p>
+      `;
+    }
   </script>
 </body>
 </html>
