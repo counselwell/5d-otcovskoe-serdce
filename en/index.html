@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5D • Father’s Heart – Lyle Thomas, Counselwell</title>
-  <meta name="description" content="A 60-second tool to hear Father’s voice in your pain – Lyle Thomas, Counselwell">
-  <meta name="author" content="Lyle Thomas">
+  <title>5D • Отцовское сердце – Лайл Томас</title>
+  <meta name="description" content="60-секундный инструмент, чтобы услышать голос Отца – Лайл Томас">
   <style>
     body{background:#f8fdf8;font-family:Arial,sans-serif;margin:0;padding:20px;display:flex;justify-content:center;align-items:center;min-height:100vh}
     .card{background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);max-width:520px;width:100%;text-align:center}
@@ -25,42 +24,42 @@
 </head>
 <body>
   <div class="card">
-    <h2>5D • Father’s Heart</h2>
-    <p>This is not a test or diagnosis.<br>This is simply a chance to hear how Father sees you right now — even if everything inside hurts.</p>
+    <h2>5D • Отцовское сердце</h2>
+    <p>Это не тест и не диагноз.<br>Это просто возможность услышать, как Отец видит тебя прямо сейчас — даже если всё внутри болит.</p>
 
-    <label><b>1. Belonging</b> — Who needs me?<br><small>How much peace do I feel in this area right now? (0 = none, 10 = fully)</small></label>
+    <label><b>1. Принадлежность</b> — Кому я нужен?<br><small>Насколько я чувствую себя принятым, любимым и драгоценным прямо сейчас? (0–10)</small></label>
     <input type="range" min="0" max="10" value="5" id="d1">
 
-    <label><b>2. Stewardship</b> — Who’s in charge?<br><small>How much inner freedom and strength do I feel? (0–10)</small></label>
+    <label><b>2. Авторитет</b> — Кто здесь хозяин?<br><small>Насколько я ощущаю внутреннюю свободу и силу? (0–10)</small></label>
     <input type="range" min="0" max="10" value="5" id="d2">
 
-    <label><b>3. Trust</b> — What’s my foundation?<br><small>How safe do I feel right now? (0–10)</small></label>
+    <label><b>3. Доверие</b> — В чём моя опора?<br><small>Насколько я чувствую себя в безопасности прямо сейчас? (0–10)</small></label>
     <input type="range" min="0" max="10" value="5" id="d3">
 
-    <label><b>4. Competence</b> — How am I doing?<br><small>How satisfied am I with myself and what I do? (0–10)</small></label>
+    <label><b>4. Компетентность</b> — Как у меня получается?<br><small>Насколько я ощущаю благодать к себе прямо сейчас? (0–10)</small></label>
     <input type="range" min="0" max="10" value="5" id="d4">
 
-    <label><b>5. Significance</b> — Why do I exist?<br><small>How much do I feel my life has meaning? (0–10)</small></label>
+    <label><b>5. Значимость</b> — Зачем я живу?<br><small>Насколько я чувствую, что моя жизнь имеет смысл? (0–10)</small></label>
     <input type="range" min="0" max="10" value="5" id="d5">
 
-    <button onclick="show()">Hear Father’s Voice</button>
+    <button onclick="show()">Услышать голос Отца</button>
     <div id="result"></div>
 
     <div style="margin-top:30px;font-size:13px;color:#666;text-align:center;">
-      © 2025 Lyle Thomas • Counselwell • 5D Christology
+      © 2025 Лайл Томас • <a href="https://t.me/lylesrealtalk" style="color:#666;text-decoration:underline">t.me/lylesrealtalk</a>
     </div>
   </div>
 
   <script>
-    const comfort=["Father is hugging you right now and saying: 'I am here. You are not alone. I will never leave you.'","He takes every burden off your shoulders and says: 'Trust Me with the wheel. I am the good Master.'","He covers you with His wings and whispers: 'You are completely safe with Me.'","He looks at you with tenderness and says: 'You are My masterpiece. I am proud of you.'","He places His hand on your heart and says: 'You are needed by Me. Your life is priceless.'"];
-    const truth=["You are My beloved child, in whom I am well pleased (Lk 3:22). I settled it all on the cross.","I gave you My authority and power — you are My co-worker and heir (Rom 8:17).","I am your Rock and Refuge. Under My wings you are safe (Ps 91:4).","You are a new creation, the righteousness of God in Christ (2 Cor 5:17, 21).","You are the heir of the King, and I have prepared everything for you (Eph 1:11; Rom 8:32)."];
-    function show(){const d=[0,+d1.value,+d2.value,+d3.value,+d4.value,+d5.value];const low=d.indexOf(Math.min(...d.slice(1)));const score=d[low];const spheres=["","Belonging","Stewardship","Trust","Competence","Significance"];document.getElementById('result').innerHTML=`
-      <div class="box heavy"><b>This sphere feels especially heavy right now:</b><br><b>${low}. ${spheres[low]}</b> (${score}/10)</div>
-      <p style="margin:20px 0"><b>Father draws near and speaks to you right now:</b></p>
+    const comfort=["Отец сейчас обнимает тебя и говорит: «Я здесь. Ты не один. Я никогда не оставлю тебя».","Он берёт всё бремя с твоих плеч и говорит: «Доверь Мне руль. Я — добрый Хозяин».","Он закрывает тебя Своими крыльями и шепчет: «Ты в полной безопасности у Меня».","Он смотрит на тебя с нежностью и говорит: «Ты Мой шедевр. Я горжусь тобой».","Он кладёт руку тебе на сердце и говорит: «Ты нужен Мне. Твоя жизнь бесценна»."];
+    const truth=["Ты — возлюбленное дитя, в котором Моё благоволение (Лк 3:22). Я уже всё решил на кресте.","Я дал тебе Свою власть и силу — ты Мой соработник и наследник (Рим 8:17).","Ты в совершенном мире, когда ум твой опирается на Меня (Ис 26:3).","Ты — новое творение, праведность Божья во Христе (2 Кор 5:17, 21).","Я призвал тебя в Свой вечный замысел (Еф 1:11)."];
+    function show(){const d=[0,+d1.value,+d2.value,+d3.value,+d4.value,+d5.value];const low=d.indexOf(Math.min(...d.slice(1)));const score=d[low];const spheres=["","Принадлежность","Авторитет","Доверие","Компетентность","Значимость"];document.getElementById('result').innerHTML=`
+      <div class="box heavy"><b>Сейчас эта сфера ощущается особенно тяжело:</b><br><b>${low}. ${spheres[low]}</b> (${score}/10)</div>
+      <p style="margin:20px 0"><b>Отец хочет, чтобы ты это знал прямо сейчас:</b></p>
       <div class="box comfort">"${comfort[low-1]}"</div>
-      <p style="margin:20px 0 10px 0"><b>And this is the eternal Truth about me, regardless of feelings:</b></p>
+      <p style="margin:20px 0 10px 0"><b>И это вечная Истина обо мне, независимо от чувств:</b></p>
       <div class="box truth">"${truth[low-1]}"</div>
-      <p style="font-size:14px;color:#555;margin-top:25px">Just sit with this for a minute. If you want, say the second phrase out loud three times — slowly and gently.<br>Father has already settled it all. You are home.</p>
+      <p style="font-size:14px;color:#555;margin-top:25px">Просто побудь с этим минутку. Если хочешь, произнеси вторую фразу вслух три раза — медленно и нежно.<br>Отец уже всё решил. Ты дома.</p>
     `;}
   </script>
 </body>
